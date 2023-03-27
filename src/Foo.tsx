@@ -14,7 +14,7 @@ export default function Foo() {
           ullamcorper sollicitudin, massa mauris imperdiet erat, vel
           ullamcorper odio erat in lectus.
         </p>
-        <Pullquote text="This is a pullquote" />
+        <Pullquote text="This is a pullquote." />
         <p>
           Vivamus porttitor justo eget tortor facilisis pharetra. Curabitur
           vitae justo vitae nisl consequat consequat. Ut at ex nec erat dapibus

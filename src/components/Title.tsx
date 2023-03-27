@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -16,9 +16,17 @@ const BalloonAnimation = () => {
     setBalloons([...balloons, { id: Date.now() }]);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      addBalloon();
+    }, 1000);
+    
+    return () => clearInterval(interval);
+  }, [balloons]);
+  
+
   return (
     <div>
-      <button onClick={addBalloon}>Add Balloon</button>
       <div style={{ position: 'relative', height: '100vh' }}>
         <TransitionGroup>
           {balloons.map((balloon) => (

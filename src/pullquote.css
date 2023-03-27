@@ -1,0 +1,9 @@
+.pullquote {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-left: 3px solid #333;
+    text-align: left;
+    word-wrap: break-word;
+  }

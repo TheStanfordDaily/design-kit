@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../pullquote.css';
 
 interface PullquoteProps {
   text: string;
@@ -6,13 +7,13 @@ interface PullquoteProps {
 
 export default function Pullquote({ text }: PullquoteProps) {
   const [visibleText, setVisibleText] = useState('');
+  const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
-    let index = 0;
     const interval = setInterval(() => {
-      if (index < text.length) {
-        setVisibleText(visibleText + text[index]);
-        index++;
+      if (textIndex < text.length) {
+        setVisibleText(visibleText + text[textIndex]);
+        setTextIndex(textIndex + 1);
       } else {
         clearInterval(interval);
       }
@@ -22,6 +23,6 @@ export default function Pullquote({ text }: PullquoteProps) {
   }, [visibleText, text]);
 
   return (
-    <div className="text-4xl font-bold text-center my-8">{visibleText}</div>
+    <blockquote className="text-4xl font-bold text-center my-8 pullquote">{visibleText}</blockquote>
   );
 };
