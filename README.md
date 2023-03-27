@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Digital Magazine Layout with React, TypeScript, and Tailwind CSS
+This project demonstrates how to create a digital magazine layout using React, TypeScript, and Tailwind CSS. It includes multiple sections with distinct visual styling, full-bleed multimedia, large pullquotes, a horizontal carousel component, and a minimum working example of React Router for navigating between pages.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Features
+Interactive web page layout
+Scrolling-based article layout
+Horizontal carousel component with magazine items
+React Router for navigating between multiple layout pages
+Getting Started
+These instructions will guide you on how to set up the project on your local machine for development and testing purposes.
+
 
 ## Available Scripts
 
@@ -44,3 +54,27 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Prerequisites
+- Node.js v12.0.0 or higher
+- Yarn v1.22.0 or higher
+
+## Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/TheStanfordDaily/programmatic-layouts.git
+cd programmatic-layouts
+```
+2. Install dependencies:
+```bash
+yarn
+```
+3. Start the development server:
+```bash
+yarn start
+```
+Open your browser and navigate to http://localhost:3000 to view the app.
+
+## Building for Production
+To create a production build, run the following command:
+Webpack is recommended
