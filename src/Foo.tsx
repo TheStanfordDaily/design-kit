@@ -6,7 +6,7 @@ import { Article, Polaroid, Pullquote, Title } from "./components";
 export default function Foo() {
   return (
     <ParallaxProvider>
-      <Title />
+      <Title headline="Magazine-Style Article" />
       <Article date="March 26, 2023" author="Scoop Scooperstein">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec

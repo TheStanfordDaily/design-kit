@@ -47,7 +47,7 @@ export default function Pullquote({ text }: PullquoteProps) {
 
       return () => clearInterval(interval);
     }
-  }, [visibleText, text, isVisible]);
+  }, [visibleText, textIndex, text, isVisible]);
 
   return (
     <blockquote ref={blockquoteRef} className="text-4xl font-bold text-center my-8 pullquote">

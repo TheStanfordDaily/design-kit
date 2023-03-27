@@ -40,10 +40,10 @@ const BalloonAnimation = () => {
 };
 
 
-const Title = () => (
+const Title = ({ headline }: { headline: string }) => (
   <div className="h-screen bg-custom-green flex justify-center items-center">
     <BalloonAnimation />
-    <h1 className="text-white text-6xl">The Magazine-Style Article</h1>
+    <h1 className="text-white text-6xl">{headline}</h1>
   </div>
 );
 
