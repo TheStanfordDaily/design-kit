@@ -1,37 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-const TitleWrapper = styled.div`
-  position: relative;
-  height: 100vh;
-  background-color: #5a9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+const Balloon = () => {
+  return <div className="balloon"></div>;
+};
 
-const MainTitle = styled.h1`
-  font-size: 4rem;
-  color: white;
-`;
+interface BalloonProps {
+  id: number;
+}
+const BalloonAnimation = () => {
+  const [balloons, setBalloons] = useState<BalloonProps[]>([]);
 
-const Heart  = ({ className }: { className?: string }) => (
-  <div
-    className={`absolute text-red-500 ${className}`}
-    style={{ fontSize: '2rem' }}
-  >
-    &#10084;
-  </div>
-);
+  const addBalloon = () => {
+    setBalloons([...balloons, { id: Date.now() }]);
+  };
+
+  return (
+    <div>
+      <button onClick={addBalloon}>Add Balloon</button>
+      <div style={{ position: 'relative', height: '100vh' }}>
+        <TransitionGroup>
+          {balloons.map((balloon) => (
+            <CSSTransition key={balloon.id} timeout={60000} classNames="balloon">
+              <Balloon />
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
+      </div>
+    </div>
+  );
+};
 
 
 const Title = () => (
   <div className="h-screen bg-custom-green flex justify-center items-center">
-    <Heart className="animate-floating duration-5000 delay-1000" />
-    <Heart className="animate-floating duration-7000 delay-2000" />
-    <Heart className="animate-floating duration-9000 delay-3000" />
-    <Heart className="animate-floating duration-6000 delay-4000" />
-    <Heart className="animate-floating duration-8000 delay-5000" />
+    <BalloonAnimation />
     <h1 className="text-white text-6xl">The Magazine-Style Article</h1>
   </div>
 );

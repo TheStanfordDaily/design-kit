@@ -28,3 +28,34 @@ code {
 .bg-custom-green {
   background-color: #5a9;
 }
+
+.balloon {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  /* Adjust the background to display your balloon icon */
+  background: url('balloon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.balloon-enter {
+  opacity: 0;
+  transform: translateY(0);
+}
+
+.balloon-enter-active {
+  opacity: 1;
+  transform: translateY(-100%);
+  transition: opacity 500ms, transform 5s ease-out;
+}
+
+.balloon-exit {
+  opacity: 1;
+}
+
+.balloon-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
