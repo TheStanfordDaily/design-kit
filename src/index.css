@@ -24,3 +24,7 @@ code {
     transform: translateY(-100%);
   }
 }
+
+.bg-custom-green {
+  background-color: #5a9;
+}
