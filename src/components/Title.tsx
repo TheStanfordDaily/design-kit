@@ -23,7 +23,6 @@ const BalloonAnimation = () => {
     
     return () => clearInterval(interval);
   }, [balloons]);
-  
 
   return (
     <div>
