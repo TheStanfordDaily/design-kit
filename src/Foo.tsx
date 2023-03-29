@@ -1,6 +1,6 @@
-import React from "react";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Article, Polaroid, Pullquote, Title } from "./components";
+import React from "react"
+import { ParallaxProvider } from "react-scroll-parallax"
+import { Article, Polaroid, Pullquote, Title } from "./components"
 
 
 export default function Foo() {
@@ -20,16 +20,12 @@ export default function Foo() {
           vitae justo vitae nisl consequat consequat. Ut at ex nec erat dapibus
           commodo.
         </p>
-        <Polaroid
-          src="https://source.unsplash.com/random/300x240"
-          alt="Random Image"
-          caption="A random image"
-        />
+        <Polaroid src="https://source.unsplash.com/random/300x240" alt="Random Image" caption="A random image" />
         <p>
           Praesent sed tellus eu odio imperdiet consectetur. Aliquam erat
           volutpat. Donec in lectus justo.
         </p>
       </Article>
     </ParallaxProvider>
-  );
-};
+  )
+}
