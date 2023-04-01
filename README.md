@@ -8,8 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/TheStanfordDaily/programmatic-layouts.git
-cd programmatic-layouts
+git clone https://github.com/TheStanfordDaily/design-kit.git
+cd design-kit
 ```
 2. Install dependencies:
 ```bash
