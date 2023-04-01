@@ -1,11 +1,11 @@
 # design-kit
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can learn more in the [Create React App documentation](https://create-react-app.dev/docs/getting-started/).
 
-## Getting Started
+## Prerequisites
 - Node.js v12.0.0 or higher
 - Yarn v1.22.0 or higher
 
-## Installation
+## Getting Started
 1. Clone the repository:
 ```bash
 git clone https://github.com/TheStanfordDaily/design-kit.git
