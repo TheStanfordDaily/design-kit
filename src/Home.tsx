@@ -10,16 +10,9 @@ export default function Home() {
     <p>
       Edit <code>src/App.tsx</code> and save to reload.
     </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Learn React
-
-    </a>
     <Link to="/foo">Foo</Link>
+    <Link to="/bar">Bar</Link>
+    <Link to="/floating">Floating</Link>
   </header>
 </div>)
 }
