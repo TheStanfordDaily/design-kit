@@ -3,13 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 import monkey from "./monkey.png"
 
-
-interface IconProps {
-  x: string;
-  y: string;
-}
-
-const Icon = ({ x, y }: IconProps) => (
+const Icon = ({ x, y }) => (
   <FontAwesomeIcon
     icon={faMusic}
     style={{
@@ -21,7 +15,7 @@ const Icon = ({ x, y }: IconProps) => (
   />
 );
 
-const ImageIcon = ({ x, y }: IconProps) => (
+const ImageIcon = ({ x, y }) => (
   // monkey image
   <img
   alt="monkey"
@@ -37,18 +31,12 @@ const ImageIcon = ({ x, y }: IconProps) => (
 
 );
 
-interface IconState {
-  id: string;
-  x: string;
-  y: number;
-}
-
 const Floating = () => {
-  const [icons, setIcons] = useState<IconState[]>([]);
+  const [icons, setIcons] = useState([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newIcon: IconState = {
+      const newIcon = {
         id: Math.random().toString(36).substr(2, 9),
         x: `${Math.random() * 100}vw`,
         y: 0,

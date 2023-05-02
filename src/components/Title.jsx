@@ -6,11 +6,8 @@ const Balloon = () => {
   return <div className="balloon"></div>;
 };
 
-interface BalloonProps {
-  id: number;
-}
 const BalloonAnimation = () => {
-  const [balloons, setBalloons] = useState<BalloonProps[]>([]);
+  const [balloons, setBalloons] = useState([]);
 
   const addBalloon = () => {
     setBalloons([...balloons, { id: Date.now() }]);
@@ -40,7 +37,7 @@ const BalloonAnimation = () => {
 };
 
 
-const Title = ({ headline }: { headline: string }) => (
+const Title = ({ headline }) => (
   <div className="h-screen bg-custom-green flex justify-center items-center">
     <BalloonAnimation />
     <h1 className="text-white text-6xl">{headline}</h1>

@@ -15,38 +15,31 @@ const BUMPS_PER_LAYER = 10;
 export const BACKGROUND = '#ffdede';
 
 // utils
-const range = (n: number) => Array.from(new Array(n), (_, i) => i);
+const range = (n) => Array.from(new Array(n), (_, i) => i);
 
 const keys = range(NUM_LAYERS);
 
 // scales
-const xScale = scaleLinear<number>({
+const xScale = scaleLinear({
   domain: [0, SAMPLES_PER_LAYER - 1],
 });
-const yScale = scaleLinear<number>({
+const yScale = scaleLinear({
   domain: [-30, 50],
 });
-const colorScale = scaleOrdinal<number, string>({
+const colorScale = scaleOrdinal({
   domain: keys,
   range: ['#ffc409', '#f14702', '#262d97', 'white', '#036ecd', '#9ecadd', '#51666e'],
 });
-const patternScale = scaleOrdinal<number, string>({
+const patternScale = scaleOrdinal({
   domain: keys,
   range: ['circles']//['mustard', 'cherry', 'navy', 'circles', 'circles', 'circles', 'circles'],
 });
 
 // accessors
-type Datum = number[];
-const getY0 = (d: Datum) => yScale(d[0]) ?? 0;
-const getY1 = (d: Datum) => yScale(d[1]) ?? 0;
+const getY0 = (d) => yScale(d[0]) ?? 0;
+const getY1 = (d) => yScale(d[1]) ?? 0;
 
-export type StreamGraphProps = {
-  width: number;
-  height: number;
-  animate?: boolean;
-};
-
-export default function Streamgraph({ width, height, animate = true }: StreamGraphProps) {
+export default function Streamgraph({ width, height, animate = true }) {
   const forceUpdate = useForceUpdate();
   const handlePress = () => forceUpdate();
 
@@ -56,7 +49,7 @@ export default function Streamgraph({ width, height, animate = true }: StreamGra
   yScale.range([height, 0]);
 
   // generate layers in render to update on touch
-  const layers = transpose<number>(
+  const layers = transpose(
     keys.map(() => generateData(SAMPLES_PER_LAYER, BUMPS_PER_LAYER)),
   );
 
@@ -83,7 +76,7 @@ export default function Streamgraph({ width, height, animate = true }: StreamGra
 
       <g onClick={handlePress} onTouchStart={handlePress}>
         <rect x={0} y={0} width={width} height={height} fill={BACKGROUND} rx={14} />
-        <Stack<number[], number>
+        <Stack
           data={layers}
           keys={keys}
           offset="wiggle"

@@ -68,8 +68,8 @@ export default function Puzzles() {
         // "38. (blank clue)"
     ]
       
-      const acrossObject: { [key: number]: string } = {};
-      const downObject: { [key: number]: string } = {};
+      const acrossObject = {};
+      const downObject = {};
       
       for (const str of across) {
         const [key, value] = str.split(". ");

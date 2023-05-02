@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../pullquote.css';
 
-interface PullquoteProps {
-  text: string;
-}
 
-export default function Pullquote({ text }: PullquoteProps) {
+export default function Pullquote({ text }) {
   const [visibleText, setVisibleText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const blockquoteRef = useRef<HTMLQuoteElement>(null);
+  const blockquoteRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
