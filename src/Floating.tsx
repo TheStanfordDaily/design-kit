@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMusic } from "@fortawesome/free-solid-svg-icons";
+import monkey from "./monkey.png"
+
 
 interface IconProps {
   x: string;
@@ -9,13 +11,30 @@ interface IconProps {
 
 const Icon = ({ x, y }: IconProps) => (
   <FontAwesomeIcon
-    icon={faBolt}
+    icon={faMusic}
     style={{
-      position: 'absolute',
+      position: "absolute",
       left: x,
       bottom: y,
     }}
+    color="skyblue"
   />
+);
+
+const ImageIcon = ({ x, y }: IconProps) => (
+  // monkey image
+  <img
+  alt="monkey"
+    src={monkey}
+    style={{
+      position: "absolute",
+      left: x,
+      bottom: y,
+      width: "50px",
+      height: "50px",
+    }}
+  />
+
 );
 
 interface IconState {
@@ -51,9 +70,16 @@ const Floating = () => {
   }, []);
 
   return (
-    <div style={{ position: 'relative', height: '100vh', background: '#FFFFE0' }}>
+    <div className="relative h-screen flex flex-col justify-center items-center" style={{ background: "#FFFFE0" }}>
+      <h1 className="text-6xl font-bold text-black">What does it mean to be an arts major at Stanford?</h1>
+      <h3 className="text-3xl font-semibold text-black mt-4">By Sebastian Hochman</h3>
+      <div className="w-1/3 mt-12 flex flex-row">
+        <p className="text-black">Donec quis finibus augue. Quisque at gravida leo, eget congue dui. Vestibulum ac nisl pellentesque, varius diam a, vestibulum turpis. Nunc varius augue ac risus porta finibus. Maecenas ultricies imperdiet magna ac mattis. In faucibus bibendum magna, sit amet mattis odio sollicitudin quis. Duis nec velit in leo maximus pellentesque.</p>
+      </div>
+      {/* button to scroll to next section will go here, downward chevron */}
+  
       {icons.map((icon) => (
-        <Icon key={icon.id} x={icon.x} y={`${icon.y}vh`} />
+        <ImageIcon key={icon.id} x={icon.x} y={`${icon.y}vh`} />
       ))}
     </div>
   );
